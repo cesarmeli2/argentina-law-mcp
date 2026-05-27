@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: argentina-law-mcp
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: ANTHROPIC_API_KEY
+        sync: false   # Se carga manualmente en el dashboard de Render
+    autoDeploy: true
